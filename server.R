@@ -27,5 +27,15 @@ shinyServer(function(input, output, session) {
   observeEvent(input$openDanger, ({createAlert(session, "mainAlert", "testDanger", "This is an alert.", "This is only an alert.", type = "danger")}))
   observeEvent(input$closeDanger, ({closeAlert(session, "testDanger")}))
   
+  observeEvent(input$openDist, updateCollapse(session, "testCollapse", open = "distPlotPanel"))
+  observeEvent(input$closeDist, updateCollapse(session, "testCollapse", close = "distPlotPanel"))
+  
+  observeEvent(input$multiple, updateCollapse(session, "testCollapse", multiple = TRUE))
+  observeEvent(input$single, updateCollapse(session, "testCollapse", multiple = FALSE))
+  
+  observe({
+    print(input$testCollapse)
+  })
+  
 })
 

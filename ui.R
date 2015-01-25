@@ -23,14 +23,18 @@ shinyUI(fluidPage(
       actionButton("openDefault", "Open Default"),
       actionButton("closeDefault", "close Default"),
       actionButton("openDanger", "Open Danger"),
-      actionButton("closeDanger", "Close Danger")
+      actionButton("closeDanger", "Close Danger"),
+      actionButton("openDist", "Open Distribution Plot"),
+      actionButton("closeDist", "Close Distribution Plot"),
+      actionButton("multiple", "Make Multiple"),
+      actionButton("single", "Make Single")
       
     ),
 
     # Show a plot of the generated distribution
     mainPanel(
       bsAlert("mainAlert"),
-      bsCollapse(id = "testCollapse", open = "scatterPlotPanel",
+      bsCollapse(id = "testCollapse", open = "scatterPlotPanel", multiple = FALSE,
         bsCollapsePanel("Information", id = "info", value = "info", type = "info", "this is some information about the page."),
         bsCollapsePanel("Distribution Plot", id = "distPlotPanel", value = "distPlot", type = "danger",
                         plotOutput("distPlot")  

@@ -15,7 +15,7 @@ bsCollapse <- function(..., id = NULL, multiple = FALSE, open = NULL) {
     }
   }
   
-  sbsHead(tags$div(class = "panel-group", id=id, role = "tablist", panels))
+  sbsHead(tags$div(class = "panel-group sbs-panel-group", id=id, role = "tablist", panels))
   
   
 }
@@ -32,7 +32,7 @@ bsCollapsePanel <- function(title, ..., id = NULL, value = NULL, type = NULL) {
     type = "default"
   }
   
-  tags$div(class = paste0("panel panel-", type),
+  tags$div(class = paste0("panel panel-", type), value = value,
     tags$div(class = "panel-heading", role = "tab", id = paste0("heading_", id),
       tags$h4(class = "panel-title",
         tags$a("data-toggle" = "collapse", href = paste0("#", id), title)
