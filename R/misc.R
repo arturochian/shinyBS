@@ -53,6 +53,10 @@ removeAttribs <- function(tag, ...) {
   return(tag)
 }
 
+getAttribs <- function(tag) {
+  tag$children[[2]]$attribs
+}
+
 inputCheck <- function(..., valid, stop.func = FALSE) {
   
   v <- list(...)[1]

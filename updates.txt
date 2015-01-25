@@ -1,0 +1,4 @@
+Alerts
+
+* Removed Block option
+* Defaults to "info" type
