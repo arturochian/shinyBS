@@ -45,9 +45,9 @@ bsCollapsePanel <- function(title, ..., id = NULL, value = NULL, type = NULL) {
   
 }
 
-updateCollapse <- function(session, id, open = NULL, close = NULL, multiple = NULL) {
+updateCollapse <- function(session, id, open = NULL, close = NULL, type = NULL) {
   
-  data <- dropNulls(list(open = open, close = close, multiple = multiple))
+  data <- dropNulls(list(open = open, close = close, type = type))
   session$sendInputMessage(id, data)
   
 }
