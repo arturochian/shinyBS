@@ -30,11 +30,10 @@ shinyServer(function(input, output, session) {
   observeEvent(input$openDist, updateCollapse(session, "testCollapse", open = "distPlotPanel"))
   observeEvent(input$closeDist, updateCollapse(session, "testCollapse", close = "distPlotPanel"))
   
-  observeEvent(input$multiple, updateCollapse(session, "testCollapse", multiple = TRUE))
-  observeEvent(input$single, updateCollapse(session, "testCollapse", multiple = FALSE))
-  
+  observeEvent(input$typeChange, updateCollapse(session, "testCollapse", type = list(distPlotPanel = "info", info = "warning", scatterPlotPanel = "default")))
+
   observe({
-    print(input$testCollapse)
+    print(input$testModal)
   })
   
 })

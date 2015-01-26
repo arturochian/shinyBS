@@ -26,8 +26,8 @@ shinyUI(fluidPage(
       actionButton("closeDanger", "Close Danger"),
       actionButton("openDist", "Open Distribution Plot"),
       actionButton("closeDist", "Close Distribution Plot"),
-      actionButton("multiple", "Make Multiple"),
-      actionButton("single", "Make Single")
+      actionButton("typeChange", "Test Type Change"),
+      actionButton("openModal", "Open Modal")
       
     ),
 
@@ -42,8 +42,8 @@ shinyUI(fluidPage(
         bsCollapsePanel("Scatterplot", id = "scatterPlotPanel", value = "scatter", type = "success",
                         plotOutput("scatter")
         )
-      )
-      
+      ),
+      bsModal(id = "testModal", title = "Test Modal", trigger = "openModal", tags$p("This is a test"), size = "large")
     )
   )
 ))
