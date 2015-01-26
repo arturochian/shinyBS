@@ -12,3 +12,4 @@ As components are updated I will add them to this list and note any changes to t
     + Defaults to 'info' type
 * Collapse Panels
     + Now accepts a 'type' argument to change styling of header
+    + The 'multiple' option can no longer be changed from update collapse.
